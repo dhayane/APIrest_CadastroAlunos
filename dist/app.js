@@ -6,6 +6,7 @@ _dotenv2.default.config();
 require('./database');
 
 var _express = require('express'); var _express2 = _interopRequireDefault(_express);
+var _cspMiddleware = require('./middlewares/cspMiddleware'); var _cspMiddleware2 = _interopRequireDefault(_cspMiddleware); // Importe o middleware
 
 var _homeRoutes = require('./routes/homeRoutes'); var _homeRoutes2 = _interopRequireDefault(_homeRoutes);
 var _userRoutes = require('./routes/userRoutes'); var _userRoutes2 = _interopRequireDefault(_userRoutes);
@@ -24,6 +25,7 @@ class App {
     this.app.use(_express2.default.urlencoded({ extended:true }));
     this.app.use(_express2.default.json());
     this.app.use(_express2.default.static(_path.resolve.call(void 0, __dirname, 'uploads')))
+    this.app.use(_cspMiddleware2.default);
   }
 
   routes() {

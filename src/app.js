@@ -6,6 +6,7 @@ dotenv.config();
 import './database';
 
 import express from 'express';
+import cspMiddleware from './middlewares/cspMiddleware'; // Importe o middleware
 
 import homeRoutes from './routes/homeRoutes';
 import userRoutes from './routes/userRoutes';
@@ -24,6 +25,7 @@ class App {
     this.app.use(express.urlencoded({ extended:true }));
     this.app.use(express.json());
     this.app.use(express.static(resolve(__dirname, 'uploads')))
+    this.app.use(cspMiddleware);
   }
 
   routes() {
