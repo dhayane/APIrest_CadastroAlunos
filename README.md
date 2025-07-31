@@ -4,15 +4,15 @@ Este projeto é uma API RESTful desenvolvida com Node.js, Express e Sequelize, q
 
 ## 🚀 Tecnologias utilizadas
 
-- Node.js
-- Express
-- Sequelize (ORM)
-- MariaDB / MySQL
-- JSON Web Token (JWT)
-- Multer (upload de imagens)
-- Helmet (segurança com headers HTTP)
-- Sucrase (transpilador)
-- Dotenv (variáveis de ambiente)
+- **Node.js**: Ambiente de execução JavaScript no lado do servidor.
+- **Express**: Framework web para Node.js, utilizado para estruturar as rotas da API.
+- **Sequelize**: ORM (Object-Relational Mapping) para interação com o banco de dados MariaDB/MySQL.
+- **MariaDB / MySQL**: Banco de dados relacional para armazenamento das informações dos alunos.
+- **JSON Web Token (JWT)**: Técnica para autenticação de usuários com tokens seguros.
+- **Multer**: Middleware para upload de arquivos, utilizado para gerenciar o envio de fotos.
+- **Helmet**: Biblioteca para adicionar segurança nos cabeçalhos HTTP.
+- **Sucrase**: Transpilador que converte código moderno JavaScript/TypeScript para versões compatíveis com Node.js.
+- **Dotenv**: Carregamento de variáveis de ambiente a partir de arquivos `.env`.
 
 ## ⚙️ Funcionalidades da API
 
@@ -35,36 +35,11 @@ Este projeto é uma API RESTful desenvolvida com Node.js, Express e Sequelize, q
 ### 🖼️ Fotos (`/photos`)
 - `POST /photos/` → Upload de imagem para um aluno (requer login)
 
-## 🚀 Como rodar localmente
+## 📝 Observações
 
-1. Clone o repositório:
-    ```bash
-    git clone https://github.com/dhayane/APIrest_CadastroAlunos.git
-    ```
+- A API utiliza JWT para autenticação. É necessário adicionar o token JWT no header das requisições protegidas (`Authorization: Bearer SEU_TOKEN_AQUI`).
+- As rotas de **alunos**, **usuários** e **fotos** requerem autenticação.
 
-2. Acesse o diretório do projeto:
-    ```bash
-    cd APIrest_CadastroAlunos
-    ```
+---
 
-3. Instale as dependências:
-    ```bash
-    npm install
-    ```
-
-4. Configure as variáveis de ambiente no arquivo `.env`. Você pode utilizar as variáveis padrões do projeto ou configurar conforme necessário.
-
-5. Rode o servidor localmente:
-    ```bash
-    npm run dev
-    ```
-
-O servidor estará disponível em `http://localhost:3001`.
-
-## 📁 Organização do Projeto
-
-- **src/**: Contém todos os arquivos fonte do projeto, incluindo controladores, rotas e configurações.
-- **uploads/**: Diretório utilizado para armazenar arquivos carregados, como fotos.
-- **dist/**: Arquivo compilado do projeto após a execução do processo de build.
-
-Feito em **Curso Javascript e TypeScript - Front-end e Back-end (Full Stack)** - Node, Express, noSQL, React, hooks, Redux, Design Patterns - Professor Luiz Otávio - Curso Fullstack Udemy!
+Feito em **Curso Javascript e TypeScript - front-end e back-end (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns** com o professor Luiz Otávio (Udemy).
